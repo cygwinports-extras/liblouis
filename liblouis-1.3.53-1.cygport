@@ -1,0 +1,23 @@
+DESCRIPTION="Braille translator and back-translator"
+HOMEPAGE="http://code.google.com/p/liblouis/"
+SRC_URI="http://liblouis.googlecode.com/files/${P}.tar.gz"
+
+abi=1
+PKG_NAMES="${PN} ${PN}${abi} ${PN}-devel"
+PKG_HINTS="setup dll devel"
+PKG_CONTENTS[0]="usr/bin/*.exe usr/share/doc/"
+PKG_CONTENTS[1]="etc/ usr/bin/*-${abi}.dll"
+PKG_CONTENTS[2]="usr/include/ usr/lib/"
+
+DIFF_EXCLUDES="louiscfg.h.in liblouis.pc"
+
+# tables/hyph_en_[Uu]S.dic
+USE_MANAGED_MOUNT=1
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# hyph_en_[Uu]S.dic
+	make_managed_mount /usr/share/liblouis/tables
+}

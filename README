@@ -1,0 +1,85 @@
+liblouis
+------------------------------------------
+Liblouis is an open-source braille translator and back-translator based 
+on the translation routines in the BRLTTY screenreader for Linux. It 
+has, however, gone far beyond these routines. It is named in honor of 
+Louis Braille.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20080523-1
+  cygport-0.3.12-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  libtool-2.2.2-2
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://code.google.com/p/liblouis/
+
+Canonical download:
+  http://liblouis.googlecode.com/files/
+
+-------------------------------------------
+
+Build instructions:
+  unpack liblouis-1.3.53-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./liblouis-1.3.53-X.cygport all
+
+This will create:
+  /usr/src/liblouis-1.3.53-X-src.tar.bz2
+  /usr/src/liblouis-1.3.53-X.tar.bz2
+  /usr/src/liblouis-devel-1.3.53-X.tar.bz2
+  /usr/src/liblouis1-1.3.53-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(liblouis)
+  /usr/bin/lou_allround.exe
+  /usr/bin/lou_basicround.exe
+  /usr/bin/lou_checktable.exe
+  /usr/bin/lou_dotsround.exe
+  /usr/bin/lou_roundtrip.exe
+  /usr/bin/lou_testback.exe
+  /usr/bin/lou_translate.exe
+  /usr/share/doc/liblouis-1.3.53/AUTHORS
+  /usr/share/doc/liblouis-1.3.53/COPYING
+  /usr/share/doc/liblouis-1.3.53/ChangeLog
+  /usr/share/doc/liblouis-1.3.53/INSTALL
+  /usr/share/doc/liblouis-1.3.53/README
+
+(liblouis1)
+  /etc/postinstall/liblouis-_usr_share_liblouis_tables.tar.bz2
+  /etc/postinstall/liblouis.sh
+  /etc/preremove/liblouis.sh
+  /usr/bin/cyglouis-1.dll
+
+(liblouis-devel)
+  /usr/include/liblouis/liblouis.h
+  /usr/include/liblouis/louiscfg.h
+  /usr/lib/liblouis.a
+  /usr/lib/liblouis.dll.a
+  /usr/lib/liblouis.la
+  /usr/lib/pkgconfig/liblouis.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.53-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
