@@ -1,0 +1,12 @@
+DESCRIPTION="Braille translator and back-translator"
+HOMEPAGE="http://code.google.com/p/liblouis/"
+SRC_URI="http://liblouis.googlecode.com/files/${P}.tar.gz"
+PATCH_URI="1.4.0-docdir.patch"
+
+PKG_NAMES="${PN} ${PN}1 ${PN}-devel"
+PKG_HINTS="setup dll devel"
+liblouis_CONTENTS="usr/bin/*.exe usr/share/doc/"
+liblouis1_CONTENTS="etc/ usr/bin/*-1.dll"
+liblouis_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/"
+
+DISTCLEANFILES="liblouis.pc"
