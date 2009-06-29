@@ -1,5 +1,5 @@
 category: Accessibility
-requires: cygwin liblouis1
+requires: liblouis1
 external-source: liblouis
 sdesc: "Braille translator and back-translator (devel)"
 ldesc: "Liblouis is an open-source braille translator and 
