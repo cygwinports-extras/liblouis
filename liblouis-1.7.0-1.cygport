@@ -1,0 +1,24 @@
+inherit python
+
+DESCRIPTION="Braille translator and back-translator"
+HOMEPAGE="http://code.google.com/p/liblouis/"
+SRC_URI="http://liblouis.googlecode.com/files/${P}.tar.gz"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel python-louis"
+PKG_HINTS="setup dll devel python"
+liblouis_CONTENTS="usr/bin/*.exe usr/share/doc/"
+liblouis0_CONTENTS="usr/bin/*-0.dll usr/share/${PN}/"
+liblouis_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/info/"
+python_louis_CONTENTS="${PYTHON_SITELIB#/}"
+
+DISTCLEANFILES="liblouis.pc"
+DIFF_EXCLUDES="louiscfg.h.in"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	pythoninto louis
+	dopython python/louis/*.py
+	python_optimize
+}

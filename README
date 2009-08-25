@@ -6,18 +6,20 @@ has, however, gone far beyond these routines. It is named in honor of
 Louis Braille.
 
 Runtime requirements:
-  cygwin-1.5.25-15
+  cygwin-1.7.0-60
+  libgcc1-4.3.2-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-1
-  automake1.9-1.9.6-3
-  binutils-20080624-1
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  libtool-2.2.2-2
+  autoconf2.5-2.64-10
+  automake1.9-1.9.6-10
+  binutils-2.19.51-1
+  cygport-0.9.9-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-14
   make-3.81-1
+  python-2.5.4-10
   sed-4.1.5-2
 
 Canonical website:
@@ -29,157 +31,25 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack liblouis-1.4.0-X-src.tar.bz2
+  unpack liblouis-1.7.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./liblouis-1.4.0-X.cygport all
+  cygport ./liblouis-1.7.0-X.cygport all
 
 This will create:
-  /usr/src/liblouis-1.4.0-X-src.tar.bz2
-  /usr/src/liblouis-1.4.0-X.tar.bz2
-  /usr/src/liblouis-devel-1.4.0-X.tar.bz2
-  /usr/src/liblouis1-1.4.0-X.tar.bz2
+  /usr/src/liblouis-1.7.0-X-src.tar.bz2
+  /usr/src/liblouis-1.7.0-X.tar.bz2
+  /usr/src/liblouis-devel-1.7.0-X.tar.bz2
+  /usr/src/liblouis0-1.7.0-X.tar.bz2
+  /usr/src/python-louis-1.7.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(liblouis)
-  /usr/bin/lou_allround.exe
-  /usr/bin/lou_checktable.exe
-  /usr/bin/lou_debug.exe
-  /usr/bin/lou_translate.exe
-  /usr/share/doc/liblouis-1.4.0/AUTHORS
-  /usr/share/doc/liblouis-1.4.0/COPYING
-  /usr/share/doc/liblouis-1.4.0/ChangeLog
-  /usr/share/doc/liblouis-1.4.0/INSTALL
-  /usr/share/doc/liblouis-1.4.0/README
-  /usr/share/doc/liblouis-1.4.0/liblouis-guide.txt
-  /usr/share/info/liblouis-guide.info.gz
-
-(liblouis1)
-  /etc/liblouis/tables/Cz-Cz-g1.utb
-  /etc/liblouis/tables/Es-Es-g1.utb
-  /etc/liblouis/tables/Fr-Ca-g2.ctb
-  /etc/liblouis/tables/Fr-Fr-g2.ctb
-  /etc/liblouis/tables/Lv-Lv-g1.utb
-  /etc/liblouis/tables/Nl-Nl-g1.utb
-  /etc/liblouis/tables/No-No-g0.utb
-  /etc/liblouis/tables/No-No-g1.ctb
-  /etc/liblouis/tables/No-No-g2.ctb
-  /etc/liblouis/tables/No-No-g3.ctb
-  /etc/liblouis/tables/Pl-Pl-g1.utb
-  /etc/liblouis/tables/Pt-Pt-g1.utb
-  /etc/liblouis/tables/Se-Se-g1.utb
-  /etc/liblouis/tables/UEBC-g1.utb
-  /etc/liblouis/tables/UEBC-g2.ctb
-  /etc/liblouis/tables/ar-ar-g1.utb
-  /etc/liblouis/tables/bg.ctb
-  /etc/liblouis/tables/boxes.ctb
-  /etc/liblouis/tables/chardefs.cti
-  /etc/liblouis/tables/compress.ctb
-  /etc/liblouis/tables/corrections.ctb
-  /etc/liblouis/tables/countries.cti
-  /etc/liblouis/tables/cy-cy-g1.utb
-  /etc/liblouis/tables/cy-cy-g2.ctb
-  /etc/liblouis/tables/da-1252.ctb
-  /etc/liblouis/tables/da-lt.ctb
-  /etc/liblouis/tables/da.ctb
-  /etc/liblouis/tables/dansk.dis
-  /etc/liblouis/tables/dansk.utb
-  /etc/liblouis/tables/de-chess.ctb
-  /etc/liblouis/tables/de-de-g0.utb
-  /etc/liblouis/tables/de-de-g1.ctb
-  /etc/liblouis/tables/de-de-g2.ctb
-  /etc/liblouis/tables/de-de.dis
-  /etc/liblouis/tables/en-GB-g2.ctb
-  /etc/liblouis/tables/en-chess.ctb
-  /etc/liblouis/tables/en-gb-g1.utb
-  /etc/liblouis/tables/en-us-brf.dis
-  /etc/liblouis/tables/en-us-comp6.ctb
-  /etc/liblouis/tables/en-us-comp8.ctb
-  /etc/liblouis/tables/en-us-compbrl.ctb
-  /etc/liblouis/tables/en-us-g1.ctb
-  /etc/liblouis/tables/en-us-g1.utb
-  /etc/liblouis/tables/en-us-g2.ctb
-  /etc/liblouis/tables/en-us-interline.ctb
-  /etc/liblouis/tables/en-us-mathtext.ctb
-  /etc/liblouis/tables/en_CA.ctb
-  /etc/liblouis/tables/eo.ctb
-  /etc/liblouis/tables/et.ctb
-  /etc/liblouis/tables/eurodefs.cti
-  /etc/liblouis/tables/fi-fi-8dot.ctb
-  /etc/liblouis/tables/fi-fi.ctb
-  /etc/liblouis/tables/fi1.ctb
-  /etc/liblouis/tables/fi2.ctb
-  /etc/liblouis/tables/fr-2007.ctb
-  /etc/liblouis/tables/fr-bfu-comp6.utb
-  /etc/liblouis/tables/fr-bfu-comp8.utb
-  /etc/liblouis/tables/fr-ca-g1.utb
-  /etc/liblouis/tables/fr-fr-g1.utb
-  /etc/liblouis/tables/gd.ctb
-  /etc/liblouis/tables/gr-bb.ctb
-  /etc/liblouis/tables/gr-gr-g1.utb
-  /etc/liblouis/tables/hi-in-g1.utb
-  /etc/liblouis/tables/hr.ctb
-  /etc/liblouis/tables/hy.ctb
-  /etc/liblouis/tables/hyph_de_DE.dic
-  /etc/liblouis/tables/hyph_en_US.dic
-  /etc/liblouis/tables/hyph_es_ES.dic
-  /etc/liblouis/tables/hyph_fr_FR.dic
-  /etc/liblouis/tables/hyph_it_IT.dic
-  /etc/liblouis/tables/hyph_nl_NL.dic
-  /etc/liblouis/tables/hyph_no_NO.dic
-  /etc/liblouis/tables/hyph_pl_PL.dic
-  /etc/liblouis/tables/hyph_pt_PT.dic
-  /etc/liblouis/tables/hyph_sv_SE.dic
-  /etc/liblouis/tables/is.ctb
-  /etc/liblouis/tables/it-it-g1.utb
-  /etc/liblouis/tables/it-it-g1.utb2
-  /etc/liblouis/tables/lt.ctb
-  /etc/liblouis/tables/marburg.ctb
-  /etc/liblouis/tables/marburg_edit.ctb
-  /etc/liblouis/tables/marburgdefs.cti
-  /etc/liblouis/tables/nemeth.ctb
-  /etc/liblouis/tables/nemeth_edit.ctb
-  /etc/liblouis/tables/nemethdefs.cti
-  /etc/liblouis/tables/nl-be-g1.utb
-  /etc/liblouis/tables/no-gen.dis
-  /etc/liblouis/tables/no-no.dis
-  /etc/liblouis/tables/printables.cti
-  /etc/liblouis/tables/ro.ctb
-  /etc/liblouis/tables/ru.ctb
-  /etc/liblouis/tables/se-se.dis
-  /etc/liblouis/tables/sk-sk-g1.utb
-  /etc/liblouis/tables/sk-sk.utb
-  /etc/liblouis/tables/spaces.ctb
-  /etc/liblouis/tables/text_nabcc.dis
-  /etc/liblouis/tables/tr.ctb
-  /etc/liblouis/tables/ukchardefs.cti
-  /etc/liblouis/tables/uni-text.dis
-  /etc/liblouis/tables/unicodedefs.cti
-  /etc/liblouis/tables/vi.ctb
-  /etc/liblouis/tables/zh-tw.ctb
-  /usr/bin/cyglouis-1.dll
-
-(liblouis-devel)
-  /usr/include/liblouis/liblouis.h
-  /usr/include/liblouis/louiscfg.h
-  /usr/lib/liblouis.a
-  /usr/lib/liblouis.dll.a
-  /usr/lib/liblouis.la
-  /usr/lib/pkgconfig/liblouis.pc
-
-------------------
-
 Port Notes:
 
------ version 1.4.0-1 -----
-Version bump.
-
------ version 1.3.53-1 -----
-Initial release for Cygwin.
+----- version 1.7.0-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
