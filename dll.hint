@@ -1,5 +1,5 @@
 category: Accessibility
-requires: libgcc1
+requires: libgcc1 liblouis-common
 external-source: liblouis
 sdesc: "Braille translator and back-translator (runtime)"
 ldesc: "Liblouis is an open-source braille translator and 
