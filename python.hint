@@ -1,8 +1,0 @@
-category: Accessibility Python
-requires: liblouis2 python
-external-source: liblouis
-sdesc: "Braille translator and back-translator (Python bindings)"
-ldesc: "Liblouis is an open-source braille translator and 
-back-translator based on the translation routines in the BRLTTY 
-screenreader for Linux. It has, however, gone far beyond these routines. 
-It is named in honor of Louis Braille."

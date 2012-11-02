@@ -1,0 +1,53 @@
+inherit python python3 pypy
+
+NAME="liblouis"
+VERSION=2.5.0
+RELEASE=1
+CATEGORY="Accessibility"
+SUMMARY="Braille translator and back-translator"
+DESCRIPTION="Liblouis is an open-source braille translator and back-translator
+based on the translation routines in the BRLTTY screenreader for Linux. It has,
+however, gone far beyond these routines. It is named in honor of Louis Braille."
+HOMEPAGE="http://code.google.com/p/liblouis/"
+SRC_URI="http://liblouis.googlecode.com/files/${P}.tar.gz"
+
+PKG_NAMES="${PN} ${PN}2 ${PN}-common ${PN}-devel python-louis python3-louis pypy-louis"
+liblouis_CONTENTS="usr/bin/lou_* usr/share/doc/ usr/share/man/"
+liblouis2_SUMMARY="${SUMMARY} library (runtime)"
+liblouis2_REQUIRES="liblouis-common"
+liblouis2_CONTENTS="usr/bin/*-2.dll"
+liblouis_common_SUMMARY="${SUMMARY} library (data)"
+liblouis_common_CONTENTS="usr/share/${PN}/"
+liblouis_devel_SUMMARY="${SUMMARY} library (development)"
+liblouis_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/info/"
+python_louis_SUMMARY="${SUMMARY} library (Python2 bindings)"
+python_louis_REQUIRES="liblouis2"
+python_louis_CONTENTS=${PYTHON_SITELIB#/}
+python3_louis_SUMMARY="${SUMMARY} library (Python3 bindings)"
+python3_louis_REQUIRES="liblouis2"
+python3_louis_CONTENTS=${PYTHON3_SITELIB#/}
+pypy_louis_SUMMARY="${SUMMARY} library (PyPy bindings)"
+pypy_louis_REQUIRES="liblouis2"
+pypy_louis_CONTENTS=${PYPY_SITELIB#/}
+
+DISTCLEANFILES="liblouis.pc"
+DIFF_EXCLUDES="louiscfg.h.in"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	pythoninto louis
+	dopython python/louis/*.py
+	python_optimize
+
+	python3into louis
+	dopython3 python/louis/*.py
+	python3_optimize
+
+	pypyinto louis
+	dopypy python/louis/*.py
+	pypy_optimize
+}
+
+KEEP_LA_FILES="none"
