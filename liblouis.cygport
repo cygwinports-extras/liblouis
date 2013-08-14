@@ -1,17 +1,18 @@
-inherit python python3 pypy
+inherit python python3 ${ARCH_i686+pypy}
 
 NAME="liblouis"
-VERSION=2.5.2
+VERSION=2.5.3
 RELEASE=1
-CATEGORY="Accessibility"
+CATEGORY="Libs"
 SUMMARY="Braille translator and back-translator"
 DESCRIPTION="Liblouis is an open-source braille translator and back-translator
 based on the translation routines in the BRLTTY screenreader for Linux. It has,
 however, gone far beyond these routines. It is named in honor of Louis Braille."
 HOMEPAGE="http://code.google.com/p/liblouis/"
-SRC_URI="http://liblouis.googlecode.com/files/${P}.tar.gz"
+SRC_URI="http://liblouis.googlecode.com/files/${NAME}-${VERSION}.tar.gz"
 
-PKG_NAMES="${PN} ${PN}2 ${PN}-common ${PN}-devel python-louis python3-louis pypy-louis"
+PKG_NAMES="${NAME} ${NAME}2 ${NAME}-common ${NAME}-devel python-louis python3-louis ${ARCH_i686+pypy-louis}"
+liblouis_CATEGORY="Accessibility"
 liblouis_CONTENTS="usr/bin/lou_* usr/share/doc/ usr/share/man/"
 liblouis2_SUMMARY="${SUMMARY} library (runtime)"
 liblouis2_REQUIRES="liblouis-common"
@@ -45,9 +46,12 @@ src_install() {
 	dopython3 python/louis/*.py
 	python3_optimize
 
-	pypyinto louis
-	dopypy python/louis/*.py
-	pypy_optimize
+	if inherited pypy
+	then
+		pypyinto louis
+		dopypy python/louis/*.py
+		pypy_optimize
+	fi
 }
 
 KEEP_LA_FILES="none"
