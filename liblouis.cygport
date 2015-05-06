@@ -12,7 +12,7 @@ HOMEPAGE="http://liblouis.org/"
 SRC_URI="https://github.com/liblouis/liblouis/archive/v${VERSION}/liblouis-v${VERSION}.tar.gz"
 PATCH_URI="2.6.2-cygwin.patch"
 
-PKG_NAMES="${NAME} ${NAME}2 ${NAME}-common ${NAME}-devel python-louis python3-louis ${ARCH_i686+pypy-louis}"
+PKG_NAMES="${NAME} ${NAME}2 ${NAME}-common ${NAME}-devel python-louis python3-louis"
 liblouis_CATEGORY="Accessibility"
 liblouis_CONTENTS="usr/bin/lou_* usr/share/doc/ usr/share/man/"
 liblouis2_SUMMARY="${SUMMARY} library (runtime)"
