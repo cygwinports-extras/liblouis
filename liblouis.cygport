@@ -1,15 +1,16 @@
-inherit python python3 ${ARCH_i686+pypy}
+inherit python python3
 
 NAME="liblouis"
-VERSION=2.5.3
+VERSION=2.6.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Braille translator and back-translator"
 DESCRIPTION="Liblouis is an open-source braille translator and back-translator
 based on the translation routines in the BRLTTY screenreader for Linux. It has,
 however, gone far beyond these routines. It is named in honor of Louis Braille."
-HOMEPAGE="http://code.google.com/p/liblouis/"
-SRC_URI="http://liblouis.googlecode.com/files/${NAME}-${VERSION}.tar.gz"
+HOMEPAGE="http://liblouis.org/"
+SRC_URI="https://github.com/liblouis/liblouis/archive/v${VERSION}/liblouis-v${VERSION}.tar.gz"
+PATCH_URI="2.6.2-cygwin.patch"
 
 PKG_NAMES="${NAME} ${NAME}2 ${NAME}-common ${NAME}-devel python-louis python3-louis ${ARCH_i686+pypy-louis}"
 liblouis_CATEGORY="Accessibility"
@@ -32,7 +33,7 @@ pypy_louis_REQUIRES="liblouis2"
 pypy_louis_CONTENTS=${PYPY_SITELIB#/}
 
 DISTCLEANFILES="liblouis.pc"
-DIFF_EXCLUDES="louiscfg.h.in"
+DIFF_EXCLUDES="louiscfg.h.in doc"
 
 src_install() {
 	cd ${B}

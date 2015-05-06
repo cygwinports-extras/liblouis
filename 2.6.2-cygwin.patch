@@ -1,0 +1,11 @@
+--- origsrc/liblouis-2.6.2/configure.ac	2015-03-02 03:54:30.000000000 -0600
++++ src/liblouis-2.6.2/configure.ac	2015-05-06 14:01:41.860992700 -0500
+@@ -131,7 +131,7 @@ AC_SUBST(WIDECHAR_TYPE)
+ AM_CONDITIONAL([HAVE_UCS4], [test x$enable_ucs4 = xyes])
+ 
+ case $host in
+-  *mingw* | *cygwin*)
++  *mingw*)
+     CFLAGS="$CFLAGS -Wl,--add-stdcall-alias"
+     LDFLAGS="$LDFLAGS -avoid-version"
+   ;;
